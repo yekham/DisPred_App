@@ -7,4 +7,6 @@ opencv-python==4.8.1.78
 keras==2.10.0
 image==1.5.33
 tensorflow
+lightgbm
+xgboost
 
