@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import tensorflow
+import os
 
 # Modeli yükle
 from tensorflow.keras.models import load_model
