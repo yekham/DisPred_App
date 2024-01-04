@@ -4,11 +4,13 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import RobustScaler
 
+
 with open('models/ensemble_model.joblib', 'rb') as file:
-	ensemble_model = joblib.load(file)
+    ensemble_model = joblib.load(file)
+
 with open('models/rs_diabetes.joblib', 'rb') as file:
-	rs = joblib.load("rs_diabetes.joblib")
-	
+    rs = joblib.load(file)
+
 
 
 # Web uygulamasını oluşturma
