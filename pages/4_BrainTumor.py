@@ -5,8 +5,8 @@ from keras.models import load_model
 import tensorflow
 
 # Modeli yükle
-with open(os.path.join("models", "model.h5"), "rb") as file:
-    model = load_model(file)
+from tensorflow.keras.models import load_model
+model = load_model(file)
 
 
 # Sınıf etiketlerini tanımla
