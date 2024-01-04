@@ -3,12 +3,8 @@ from PIL import Image
 import numpy as np
 import tensorflow
 import os
-from keras.models import load_model
-
-# Modeli yükle
-
-with open(os.path.join("models", "model.h5"), "rb") as file:
-    model = load_model(file)
+from tensorflow.keras.models import load_model
+model = load_model("models/model.h5")
 
 
 # Sınıf etiketlerini tanımla
