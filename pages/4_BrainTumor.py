@@ -7,7 +7,7 @@ from keras.models import load_model
 # Modeli yükle
 
 
-model = load_model("./DisPred_App/model.h5")
+model = load_model("model.h5")
 
 # Sınıf etiketlerini tanımla
 labels = ['glioma_tumor', 'meningioma_tumor', 'no_tumor', 'pituitary_tumor']
