@@ -5,9 +5,10 @@ import joblib
 import numpy as np
 
 
-
-xgb_model = joblib.load('xgb_model.joblib')
-rs = joblib.load("rs_CHD.joblib")
+with open(os.path.join("models", "xgb_model.joblib"), "rb") as file:
+    model = joblib.load(file)
+with open(os.path.join("models", "rs_CHD.joblib"), "rb") as file:
+    rs = joblib.load("rs_CHD.joblib")
 
 
 # Streamlit uygulama başlığı
