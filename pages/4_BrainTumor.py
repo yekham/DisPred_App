@@ -1,12 +1,12 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
-from keras.models import load_model
 import tensorflow
 
 # Modeli yükle
 from tensorflow.keras.models import load_model
-model = load_model(file)
+with open(os.path.join("models", "model.h5"), "rb") as file:
+    model = load_model(file)
 
 
 # Sınıf etiketlerini tanımla
