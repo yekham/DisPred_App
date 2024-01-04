@@ -4,8 +4,12 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import RobustScaler
 
-ensemble_model = joblib.load('ensemble_model.joblib')
-rs = joblib.load("rs_diabetes.joblib")
+with open('models/model.pkl', 'rb') as file:
+	ensemble_model = joblib.load(file)
+with open('models/rs_diabetes.joblib', 'rb') as file:
+	rs = joblib.load("rs_diabetes.joblib")
+	
+
 
 # Web uygulamasını oluşturma
 st.title("Diyabet Tahmin Uygulaması")
