@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.preprocessing import RobustScaler
 import joblib
 import numpy as np
+import os
 
 
 with open(os.path.join("models", "xgb_model.joblib"), "rb") as file:
