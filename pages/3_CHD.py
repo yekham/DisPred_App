@@ -6,7 +6,7 @@ import numpy as np
 
 
 
-xgb_model = joblib.load('./DisPred_App/xgb_model.joblib')
+xgb_model = joblib.load('xgb_model.joblib')
 rs = joblib.load("rs_CHD.joblib")
 
 
