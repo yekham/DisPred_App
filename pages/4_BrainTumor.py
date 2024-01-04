@@ -6,7 +6,7 @@ import tensorflow
 
 # Modeli yükle
 with open(os.path.join("models", "model.h5"), "rb") as file:
-    model = joblib.load(file)
+    model = load_model(file)
 
 
 # Sınıf etiketlerini tanımla
