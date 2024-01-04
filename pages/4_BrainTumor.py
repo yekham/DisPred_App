@@ -1,25 +1,24 @@
 import streamlit as st
-import cv2
+from PIL import Image
 import numpy as np
 from keras.models import load_model
 
-
 # Modeli yükle
-
-
 model = load_model("model.h5")
 
 # Sınıf etiketlerini tanımla
 labels = ['glioma_tumor', 'meningioma_tumor', 'no_tumor', 'pituitary_tumor']
 
-def predict_tumor(image):
-    # Giriş resmi boyutunu ve şeklini ayarla (150x150 piksel olarak)
-    img = cv2.resize(image, (224, 224))
+def preprocess_image(image):
+    # Giriş resmi boyutunu ve şeklini ayarla (224x224 piksel olarak)
+    img = image.resize((224, 224))
     img_array = np.array(img)
     img_array = img_array.reshape(1, 224, 224, 3)
+    return img_array
 
+def predict_tumor(image):
     # Modeli kullanarak tahmin yap
-    prediction = model.predict(img_array)
+    prediction = model.predict(image)
 
     # Tahmin edilen sınıf indeksi
     predicted_class_index = np.argmax(prediction)
@@ -35,10 +34,13 @@ uploaded_file = st.file_uploader("Choose a brain MRI image...", type=["jpg", "jp
 
 if uploaded_file is not None:
     # Yüklenen dosyayı oku
-    image = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), cv2.IMREAD_COLOR)
+    image = Image.open(uploaded_file)
+
+    # Görüntüyü model için uygun formata getir
+    img_array = preprocess_image(image)
 
     # Tahmin yap
-    predicted_class = predict_tumor(image)
+    predicted_class = predict_tumor(img_array)
 
     # Sonucu göster
     st.image(image, caption='Uploaded MRI Image.', use_column_width=True)
