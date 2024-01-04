@@ -6,8 +6,8 @@ import numpy as np
 
 
 
-xgb_model = joblib.load("DisPred_App/xgb_model.joblib")
-rs = joblib.load("DisPred_App/pages/rs_CHD.joblib")
+xgb_model = joblib.load('./DisPred_App/xgb_model.joblib')
+rs = joblib.load("rs_CHD.joblib")
 
 
 # Streamlit uygulama başlığı
