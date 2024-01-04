@@ -6,3 +6,4 @@ st.set_page_config(
 )
 
 st.title("Main Page")
+st.write("This is the main page.")
