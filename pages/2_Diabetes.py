@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import RobustScaler
 
-ensemble_model = joblib.load(r"C:\Users\yekta\Documents\pycharm_miuul\DisPred_App\ensemble_model.joblib")
-rs = joblib.load(r"C:\Users\yekta\Documents\pycharm_miuul\DisPred_App\pages\rs_diabetes.joblib")
+ensemble_model = joblib.load("DisPred_App\ensemble_model.joblib")
+rs = joblib.load("DisPred_App\pages\rs_diabetes.joblib")
 
 # Web uygulamasını oluşturma
 st.title("Diyabet Tahmin Uygulaması")
