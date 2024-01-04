@@ -5,7 +5,9 @@ from keras.models import load_model
 import tensorflow
 
 # Modeli yükle
-model = load_model("model.h5")
+with open(os.path.join("models", "model.h5"), "rb") as file:
+    model = joblib.load(file)
+
 
 # Sınıf etiketlerini tanımla
 labels = ['glioma_tumor', 'meningioma_tumor', 'no_tumor', 'pituitary_tumor']
