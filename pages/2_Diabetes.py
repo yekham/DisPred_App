@@ -57,4 +57,4 @@ if st.button("Tahmin Et"):
         diabetes_dig = 'Congratulation,You are not diabetic'
         image = Image.open('negative.jpg')
         st.image(image, caption='')
-    st.success(name+' , ' + diabetes_dig)
+    st.success(diabetes_dig)
