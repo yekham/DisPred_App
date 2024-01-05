@@ -63,6 +63,11 @@ if st.button("Tahmin Et"):
     st.write(input_data_scaled)
     st.subheader("Tahmin Sonucu")
     if prediction[0] == 1:
-        st.write("Diyabet olma olasılığı yüksek.")
+        diabetes_dig = "we are really sorry to say but it seems like you are Coronary Heart Disease."
+        image = Image.open('positive.jpg')
+        st.image(image, caption='')
     else:
-        st.write("Diyabet olma olasılığı düşük.")
+        diabetes_dig = 'Congratulation,You are not Coronary Heart Disease'
+        image = Image.open('negative.jpg')
+        st.image(image, caption='')
+    st.success(diabetes_dig)
