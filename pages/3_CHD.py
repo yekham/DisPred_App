@@ -4,6 +4,8 @@ from sklearn.preprocessing import RobustScaler
 import joblib
 import numpy as np
 import os
+from PIL import Image
+
 
 
 with open(os.path.join("models", "xgb_model.joblib"), "rb") as file:
