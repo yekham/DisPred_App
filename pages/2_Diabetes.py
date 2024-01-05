@@ -3,6 +3,8 @@ import joblib
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import RobustScaler
+from PIL import Image
+
 
 
 with open('models/ensemble_model.joblib', 'rb') as file:
