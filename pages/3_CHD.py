@@ -9,7 +9,7 @@ from PIL import Image
 
 
 with open(os.path.join("models", "xgb_model.joblib"), "rb") as file:
-    model = joblib.load(file)
+    xgb_model = joblib.load(file)
 with open(os.path.join("models", "rs_CHD.joblib"), "rb") as file:
     rs = joblib.load(file)
 
