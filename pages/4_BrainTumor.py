@@ -17,7 +17,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 model = load_model("models/model.h5")
 # Sınıf etiketlerini tanımla
 labels = ['glioma_tumor', 'meningioma_tumor', 'no_tumor', 'pituitary_tumor']
-st.title("Beyin Tümörü Tahmini")
+
 
 def preprocess_image(image):
     # Giriş resmi boyutunu ve şeklini ayarla (224x224 piksel olarak)
@@ -38,8 +38,8 @@ def predict_tumor(image):
 
     return predicted_class_label
 
-# Streamlit uygulaması
-st.title("Brain Tumor Classification")
+st.image(Image.open("brain.png"))
+st.title("Beyin Tümörü Tahmini")
 uploaded_file = st.file_uploader("Choose a brain MRI image...", type=["jpg", "jpeg"])
 
 if uploaded_file is not None:
@@ -56,4 +56,4 @@ if uploaded_file is not None:
     st.image(image, caption='Uploaded MRI Image.', use_column_width=True)
     st.write("Prediction:", predicted_class)
 else:
-    st.write("Please upload an image.")
+    st.write("Lütfen bir resim dosyası yükleyin.")
