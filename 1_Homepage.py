@@ -7,3 +7,10 @@ st.set_page_config(
 
 st.title("Main Page")
 st.write("This is the main page.")
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
