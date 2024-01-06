@@ -21,7 +21,7 @@ with open('models/rs_diabetes.joblib', 'rb') as file:
 
 
 
-st.image(Image.open("diabetes.png",use_column_width=True))
+st.image(Image.open("diabetes.png"))
 st.title("Diyabet Tahmini")
 
 # Kullanıcıdan giriş alalım
