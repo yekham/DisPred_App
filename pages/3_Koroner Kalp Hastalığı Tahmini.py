@@ -21,7 +21,7 @@ with open(os.path.join("models", "rs_CHD.joblib"), "rb") as file:
 
 
 # Streamlit uygulama başlığı
-st.image(Image.open("heart.png", use_column_width=True))
+st.image(Image.open("heart.png"))
 st.title("Koroner Kalp Hastalığı Tahmini")
 
 # Kullanıcıdan giriş verilerini al
