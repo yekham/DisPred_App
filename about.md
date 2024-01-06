@@ -4,6 +4,7 @@ Hoş geldiniz! DİSPRED, gelişmiş yapay zeka algoritmalarını kullanarak diya
 koroner kalp hastalığı ve beyin tümörü ön teşhisinde size yardımcı olabilecek bir web uygulamasıdır. 
 Sağlık sorunları, erken teşhisle önemli ölçüde yönetilebilir.
 Bu uygulama, kullanıcıların sağlık durumlarını anlamalarına ve proaktif bir sağlık bakımı benimsemelerine yardımcı olmak amacıyla tasarlanmıştır.
+asdasdasdasddddddddddddddddddddddddddddasdddddddddd
 ---
 
 ## Model
