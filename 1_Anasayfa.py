@@ -6,8 +6,6 @@ st.set_page_config(
     page_icon="👋",
 )
 
-st.title("DİSPRED")
-st.write("DİSPRED uygulamasına hoşgeldiniz.")
 def read_markdown_file(markdown_file):
     return Path(markdown_file).read_text()
 
