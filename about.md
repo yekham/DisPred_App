@@ -1,7 +1,9 @@
-## About Project
+## DİSPRED 
 
-An application that facilitates farmers, scientists and botanists to detect the type of plant or crops, detect any kind of diseases in them. The app sends the image of the plant to the server where it is analysed using CNN classifier model. Once detected, the disease and its solutions are displayed to the user.
-
+Hoş geldiniz! DİSPRED, gelişmiş yapay zeka algoritmalarını kullanarak diyabet,
+koroner kalp hastalığı ve beyin tümörü ön teşhisinde size yardımcı olabilecek bir web uygulamasıdır. 
+Sağlık sorunları, erken teşhisle önemli ölçüde yönetilebilir.
+Bu uygulama, kullanıcıların sağlık durumlarını anlamalarına ve proaktif bir sağlık bakımı benimsemelerine yardımcı olmak amacıyla tasarlanmıştır.
 ---
 
 ## Model
