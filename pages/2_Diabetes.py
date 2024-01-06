@@ -22,7 +22,7 @@ with open('models/rs_diabetes.joblib', 'rb') as file:
 
 
 st.image(Image.open("diabetes.png"))
-st.title("Diyabet Tahmin")
+st.title("Diyabet Tahmini")
 
 # Kullanıcıdan giriş alalım
 Cholesterol = st.number_input("Toplam Kolesterol", min_value=0, max_value=500, value=150)
