@@ -53,7 +53,7 @@ if uploaded_file is not None:
     predicted_class = predict_tumor(img_array)
 
     # Sonucu göster
-    st.image(image, use_column_width=True)
+    st.image(image, width=500)
     if predicted_class == 'no_tumor':
         st.write("Tahmin edilen sınıf: no_tumor")
     elif predicted_class == 'meningioma_tumor':
