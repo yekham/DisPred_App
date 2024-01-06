@@ -40,7 +40,7 @@ def predict_tumor(image):
 
 st.image(Image.open("brain.png"))
 st.title("Beyin Tümörü Tahmini")
-uploaded_file = st.file_uploader("Choose a brain MRI image...", type=["jpg", "jpeg"])
+uploaded_file = st.file_uploader("Teşhis etmek istediğiniz beyin MR dosyasını yükleyin", type=["jpg", "jpeg"])
 
 if uploaded_file is not None:
     # Yüklenen dosyayı oku
