@@ -4,9 +4,17 @@ import numpy as np
 import tensorflow
 import os
 from tensorflow.keras.models import load_model
+
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
 model = load_model("models/model.h5")
-
-
 # Sınıf etiketlerini tanımla
 labels = ['glioma_tumor', 'meningioma_tumor', 'no_tumor', 'pituitary_tumor']
 st.title("Beyin Tümörü Tahmini")
