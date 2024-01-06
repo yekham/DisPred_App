@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="DisPred App",
+    page_title="DisPred",
     page_icon="👋",
 )
 
