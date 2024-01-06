@@ -60,7 +60,7 @@ if uploaded_file is not None:
         st.write("Tahmin edilen sınıf: meningioma_tumor")
     elif predicted_class == 'glioma_tumor':
         st.write("Tahmin edilen sınıf: glioma_tumor")
-    else predicted_class == 'pituitary_tumor':
+    else :
         st.write("Tahmin edilen sınıf: pituitary_tumor")
 
 
