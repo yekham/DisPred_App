@@ -15,7 +15,8 @@ with open(os.path.join("models", "rs_CHD.joblib"), "rb") as file:
 
 
 # Streamlit uygulama başlığı
-st.title("Koroner Kalp Hastalığı Tahmin Uygulaması")
+st.image(Image.open("heart.png"), width=200)
+st.title("Koroner Kalp Hastalığı Tahmini")
 
 # Kullanıcıdan giriş verilerini al
 Gender_mapping = {"Erkek": 1, "Kadın": 0}
@@ -59,15 +60,13 @@ input_data_scaled=np.insert(input_data_scaled, insert_diabetes, diabetes_encoded
 # Tahmin işlemi
 if st.button("Tahmin Et"):
     prediction = xgb_model.predict(input_data_scaled)
-    st.subheader("Giriş Verileri")
-    st.write(input_data_scaled)
     st.subheader("Tahmin Sonucu")
     if prediction[0] == 1:
-        diabetes_dig = "we are really sorry to say but it seems like you are Coronary Heart Disease."
+        diabetes_dig = "Tahminlerimize göre Koroner Kalp Hastalığ riski taşıyor. "
         image = Image.open('positive.jpg')
         st.image(image, caption='')
     else:
-        diabetes_dig = 'Congratulation,You are not Coronary Heart Disease'
+        diabetes_dig = 'Harika. Koroner Kalp Hastalığı riski yok.'
         image = Image.open('negative.jpg')
         st.image(image, caption='')
     st.success(diabetes_dig)
