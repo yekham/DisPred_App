@@ -16,7 +16,7 @@ with open('models/rs_diabetes.joblib', 'rb') as file:
 
 
 # Web uygulamasını oluşturma
-st.title("Diyabet Tahmin Uygulaması")
+st.title("Diyabet Tahmin")
 
 # Kullanıcıdan giriş alalım
 Cholesterol = st.number_input("Cholesterol", min_value=0, max_value=500, value=150)
