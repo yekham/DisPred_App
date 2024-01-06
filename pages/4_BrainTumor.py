@@ -9,6 +9,7 @@ model = load_model("models/model.h5")
 
 # Sınıf etiketlerini tanımla
 labels = ['glioma_tumor', 'meningioma_tumor', 'no_tumor', 'pituitary_tumor']
+st.title("Beyin Tümörü Tahmini")
 
 def preprocess_image(image):
     # Giriş resmi boyutunu ve şeklini ayarla (224x224 piksel olarak)
