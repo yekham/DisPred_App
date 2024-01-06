@@ -5,8 +5,8 @@ st.set_page_config(
     page_icon="👋",
 )
 
-st.title("Main Page")
-st.write("This is the main page.")
+st.title("DİSPRED")
+st.write("DİSPRED uygulamasına hoşgeldiniz.")
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
