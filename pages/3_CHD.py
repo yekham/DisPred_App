@@ -6,7 +6,13 @@ import numpy as np
 import os
 from PIL import Image
 
-
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 with open(os.path.join("models", "xgb_model.joblib"), "rb") as file:
     xgb_model = joblib.load(file)
