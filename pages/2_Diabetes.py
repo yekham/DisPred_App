@@ -4,7 +4,13 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import RobustScaler
 from PIL import Image
-
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 with open('models/ensemble_model.joblib', 'rb') as file:
@@ -15,25 +21,25 @@ with open('models/rs_diabetes.joblib', 'rb') as file:
 
 
 
-# Web uygulamasını oluşturma
+st.image(Image.open("diabetes.png"))
 st.title("Diyabet Tahmin")
 
 # Kullanıcıdan giriş alalım
-Cholesterol = st.number_input("Cholesterol", min_value=0, max_value=500, value=150)
-Glucose = st.number_input("Glucose", min_value=0, max_value=500, value=100)
-HDL_Chol = st.number_input("HDL_Chol", min_value=0, max_value=400, value=50)
+Cholesterol = st.number_input("Toplam Kolesterol", min_value=0, max_value=500, value=150)
+Glucose = st.number_input("Kan Şeker Seviyesi", min_value=0, max_value=500, value=100)
+HDL_Chol = st.number_input("HDL Kolesterol", min_value=0, max_value=400, value=50)
 Chol_HDL_ratio = Cholesterol / HDL_Chol
-Age = st.number_input("Age", min_value=0, max_value=120, value=30)
+Age = st.number_input("Yaş", min_value=0, max_value=120, value=30)
 Gender_mapping = {"Male": 1, "Female": 0}
-Gender = st.selectbox("Gender", ["Male", "Female"])
+Gender = st.selectbox("Cinsiyet", ["Male", "Female"])
 Gender_encoded = Gender_mapping[Gender]
-Height = st.number_input("Height", min_value=50, max_value=300, value=170)
-Weight = st.number_input("Weight", min_value=10, max_value=300, value=70)
+Height = st.number_input("Boy", min_value=50, max_value=300, value=170)
+Weight = st.number_input("Kilo", min_value=10, max_value=300, value=70)
 BMI = (Weight / (Height / 100) ** 2)
-Systolic_BP = st.number_input("Systolic_BP", min_value=0, max_value=400, value=120)
-Diastolic_BP = st.number_input("Diastolic_BP", min_value=0, max_value=400, value=80)
-waist = st.number_input("waist", min_value=0, max_value=300, value=80)
-hip = st.number_input("hip", min_value=0, max_value=300, value=90)
+Systolic_BP = st.number_input("Sistolik Kan Basıncı", min_value=0, max_value=400, value=120)
+Diastolic_BP = st.number_input("Diyastolik Kan Basıncı", min_value=0, max_value=400, value=80)
+waist = st.number_input("Bel çevre uzunluğu", min_value=0, max_value=300, value=80)
+hip = st.number_input("Kalça çevre uzunluğu", min_value=0, max_value=300, value=90)
 Waist_hip_ratio = waist / hip
 insert_index=5
 # Kullanıcının girdiği verileri bir veri çerçevesine yerleştirelim
@@ -50,11 +56,11 @@ if st.button("Tahmin Et"):
     # Tahmini ekrana yazdıralım
     st.subheader("Tahmin Sonucu")
     if prediction[0] == 1:
-        diabetes_dig = "we are really sorry to say but it seems like you are Diabetic."
+        diabetes_dig = "Tahminlerimize göre Diyabet hastalığı riski taşıyor."
         image = Image.open('positive.jpg')
         st.image(image, caption='')
     else:
-        diabetes_dig = 'Congratulation,You are not diabetic'
+        diabetes_dig = 'Harika. Diyabet hastalığı riski yok.'
         image = Image.open('negative.jpg')
         st.image(image, caption='')
     st.success(diabetes_dig)
