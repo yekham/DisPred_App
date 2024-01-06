@@ -53,7 +53,16 @@ if uploaded_file is not None:
     predicted_class = predict_tumor(img_array)
 
     # Sonucu göster
-    st.image(image, caption='Uploaded MRI Image.', use_column_width=True)
-    st.write("Prediction:", predicted_class)
+    st.image(image, use_column_width=True)
+    if predicted_class == 'no_tumor':
+        st.write("Tahmin edilen sınıf: no_tumor")
+    elif predicted_class == 'meningioma_tumor':
+        st.write("Tahmin edilen sınıf: meningioma_tumor")
+    elif predicted_class == 'glioma_tumor':
+        st.write("Tahmin edilen sınıf: glioma_tumor")
+    else predicted_class == 'pituitary_tumor':
+        st.write("Tahmin edilen sınıf: pituitary_tumor")
+
+
 else:
     st.write("Lütfen bir resim dosyası yükleyin.")
