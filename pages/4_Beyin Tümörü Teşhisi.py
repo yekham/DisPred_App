@@ -57,7 +57,7 @@ if uploaded_file is not None:
     if predicted_class == 'no_tumor':
         image = Image.open('notumor.png')
         st.image(image)
-        brain_dig = "Tahminlerimize göre beyin tümörü riski yok."
+        brain_dig = "Tahminlerimize göre hastanın beyin tümörü riski yoktur."
     elif predicted_class == 'meningioma_tumor':
         image = Image.open('meningiom.png')
         st.image(image)
@@ -69,7 +69,7 @@ if uploaded_file is not None:
     else :
         image = Image.open('hipofiz.png')
         st.image(image)
-        brain_dig = "Tahminlerimize göre hasta Hipofiz Tümörü teşhisi konulmuştur."
+        brain_dig = "Tahminlerimize göre hastaya Hipofiz Tümörü teşhisi konulmuştur."
     st.success(brain_dig)
 
 else:
