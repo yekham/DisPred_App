@@ -1,6 +1,5 @@
 import streamlit as st
 from PIL import Image
-from streamlit.state.session_state import SessionState
 
 st.set_page_config(
     page_title="DisPred",
@@ -23,7 +22,7 @@ st.write(
 )
 
 
-state = SessionState.get(username="")
+user_data = {}
 
 st.markdown("""
     <style>
@@ -36,7 +35,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Kullanıcı Girişi Formu
 with st.form("login_form", class_="center"):
     st.header("Kullanıcı Girişi")
     username = st.text_input("Kullanıcı Adı")
@@ -45,10 +43,10 @@ with st.form("login_form", class_="center"):
     # Kullanıcı Girişi Kontrolü
     if submitted:
         # Giriş işlemleri burada yapılabilir
-        state.username = username
+        user_data["username"] = username
         st.success(f"Başarıyla giriş yaptınız, {username}!")
 
 # Diğer sayfalarda kullanıcı adını gösterme örneği
-if state.username:
-    st.write(f"Kullanıcı adı: {state.username}")
+if "username" in user_data:
+    st.write(f"Kullanıcı adı: {user_data['username']}")
     # Burada diğer sayfa içeriğini gösterebilirsiniz
