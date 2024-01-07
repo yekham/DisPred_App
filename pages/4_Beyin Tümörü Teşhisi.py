@@ -65,7 +65,7 @@ if uploaded_file is not None:
     elif predicted_class == 'glioma_tumor':
         image = Image.open('glial.png')
         st.image(image)
-        brain_dig = "Tahminlerimize göre hasta Glial Tümör teşhisi konulmuştur."
+        brain_dig = "Tahminlerimize göre hastaya Glial Tümör teşhisi konulmuştur."
     else :
         image = Image.open('hipofiz.png')
         st.image(image)
