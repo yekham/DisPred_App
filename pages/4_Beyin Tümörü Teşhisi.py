@@ -55,14 +55,22 @@ if uploaded_file is not None:
     # Sonucu göster
     st.image(image, use_column_width=True)
     if predicted_class == 'no_tumor':
-        st.write("Tahmin edilen sınıf: no_tumor")
+        image = Image.open('notumor.png')
+        st.image(image)
+        brain_dig = "Tahminlerimize göre beyin tümörü riski yok."
     elif predicted_class == 'meningioma_tumor':
-        st.write("Tahmin edilen sınıf: meningioma_tumor")
+        image = Image.open('meningiom.png')
+        st.image(image)
+        brain_dig = "Tahminlerimize göre hastaya Meningiom Tümör teşhisi konulmuştur ."
     elif predicted_class == 'glioma_tumor':
-        st.write("Tahmin edilen sınıf: glioma_tumor")
+        image = Image.open('glial.png')
+        st.image(image)
+        brain_dig = "Tahminlerimize göre hasta Glial Tümör teşhisi konulmuştur."
     else :
-        st.write("Tahmin edilen sınıf: pituitary_tumor")
-
+        image = Image.open('hipofiz.png')
+        st.image(image)
+        brain_dig = "Tahminlerimize göre hasta Hipofiz Tümörü teşhisi konulmuştur."
+    st.success(brain_dig)
 
 else:
     st.write("Lütfen bir resim dosyası yükleyin.")
