@@ -40,7 +40,7 @@ with st.form("login_form"):
     st.header("Kullanıcı Girişi")
     username = st.text_input("Kullanıcı Adı")
     st.write("<style>div.Widget.row-widget.stButton {margin-top: 25px;}</style>", unsafe_allow_html=True)  # Form elemanları arasında boşluk bırakmak için
-    submitted = st.form_submit_button("Giriş Yap", key="login_button")
+    submitted = st.form_submit_button("Giriş Yap")
 
     # Kullanıcı Girişi Kontrolü
     if submitted:
