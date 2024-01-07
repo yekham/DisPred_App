@@ -23,7 +23,7 @@ st.write(
 
 user_data = {}
 
-# Sayfa ortalamak için CSS kullanımı
+
 st.markdown("""
     <style>
         .center {
@@ -35,20 +35,15 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Kullanıcı Girişi Formu
 with st.form("login_form"):
     st.header("Kullanıcı Girişi")
     username = st.text_input("Kullanıcı Adı")
-    st.write("<style>div.Widget.row-widget.stButton {margin-top: 25px;}</style>", unsafe_allow_html=True)  # Form elemanları arasında boşluk bırakmak için
+    st.write("<style>div.Widget.row-widget.stButton {margin-top: 25px;}</style>", unsafe_allow_html=True)
     submitted = st.form_submit_button("Giriş Yap")
 
-    # Kullanıcı Girişi Kontrolü
     if submitted:
-        # Giriş işlemleri burada yapılabilir
         user_data["username"] = username
         st.success(f"Başarıyla giriş yaptınız, {username}!")
 
-# Diğer sayfalarda kullanıcı adını gösterme örneği
 if "username" in user_data:
     st.write(f"Kullanıcı adı: {user_data['username']}")
-    # Burada diğer sayfa içeriğini gösterebilirsiniz
