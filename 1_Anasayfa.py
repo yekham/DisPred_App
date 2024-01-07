@@ -21,9 +21,9 @@ st.write(
     "paneli kullanabilirsiniz."
 )
 
-
 user_data = {}
 
+# Sayfa ortalamak için CSS kullanımı
 st.markdown("""
     <style>
         .center {
@@ -35,10 +35,12 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-with st.form("login_form", class_="center"):
+# Kullanıcı Girişi Formu
+with st.form("login_form"):
     st.header("Kullanıcı Girişi")
     username = st.text_input("Kullanıcı Adı")
-    submitted = st.form_submit_button("Giriş Yap")
+    st.write("<style>div.Widget.row-widget.stButton {margin-top: 25px;}</style>", unsafe_allow_html=True)  # Form elemanları arasında boşluk bırakmak için
+    submitted = st.form_submit_button("Giriş Yap", key="login_button")
 
     # Kullanıcı Girişi Kontrolü
     if submitted:
