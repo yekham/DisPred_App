@@ -1,13 +1,6 @@
 import streamlit as st
 from PIL import Image
-custom_theme = """
-    [theme]
-    primaryColor = "#4CAF50"
-    backgroundColor = "#f1f1f1"
-    secondaryBackgroundColor = "#ffffff"
-    textColor = "#333333"
-    font = "sans-serif"
-"""
+
 st.set_page_config(
     page_title="DisPred",
     page_icon="🩺",
