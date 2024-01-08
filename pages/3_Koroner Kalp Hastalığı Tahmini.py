@@ -20,11 +20,11 @@ with open(os.path.join("models", "rs_CHD.joblib"), "rb") as file:
     rs = joblib.load(file)
 
 
-# Streamlit uygulama başlığı
+
 st.image(Image.open("heart.png"))
 st.title("Koroner Kalp Hastalığı Tahmini")
 
-# Kullanıcıdan giriş verilerini al
+
 Gender_mapping = {"Erkek": 1, "Kadın": 0}
 Gender = st.selectbox("Cinsiyet", ["Erkek", "Kadın"])
 Gender_encoded = Gender_mapping[Gender]
@@ -63,7 +63,7 @@ input_data_scaled=np.insert(input_data_scaled, insert_prevalentStroke, stroke_en
 input_data_scaled=np.insert(input_data_scaled, insert_prevalentHyp, hyp_encoded, axis=1)
 input_data_scaled=np.insert(input_data_scaled, insert_diabetes, diabetes_encoded, axis=1)
 
-# Tahmin işlemi
+
 if st.button("Tahmin Et"):
     prediction = xgb_model.predict(input_data_scaled)
     st.subheader("Tahmin Sonucu")
