@@ -24,7 +24,7 @@ with open('models/rs_diabetes.joblib', 'rb') as file:
 st.image(Image.open("diabetes.png"))
 st.title("Diyabet Tahmini")
 
-# Kullanıcıdan giriş alalım
+
 Cholesterol = st.number_input("Toplam Kolesterol", min_value=0, max_value=500, value=150)
 Glucose = st.number_input("Kan Şeker Seviyesi", min_value=0, max_value=500, value=100)
 HDL_Chol = st.number_input("HDL Kolesterol", min_value=0, max_value=400, value=50)
@@ -42,18 +42,14 @@ waist = st.number_input("Bel çevre uzunluğu", min_value=0, max_value=300, valu
 hip = st.number_input("Kalça çevre uzunluğu", min_value=0, max_value=300, value=90)
 Waist_hip_ratio = waist / hip
 insert_index=5
-# Kullanıcının girdiği verileri bir veri çerçevesine yerleştirelim
+
 input_data=([[Cholesterol,Glucose,HDL_Chol,Chol_HDL_ratio,Age,Height,Weight,BMI,Systolic_BP,Diastolic_BP,waist,hip,Waist_hip_ratio]])
 
 input_data_scaled = rs.transform(input_data)
 input_data_scaled=np.insert(input_data_scaled, insert_index, Gender_encoded, axis=1)
-# Tahmin butonu
+
 if st.button("Tahmin Et"):
-    # Kullanıcının girdiği veri üzerinde tahmin yapalım
     prediction = ensemble_model.predict(input_data_scaled)
-    st.subheader("Giriş Verileri")
-    st.write(input_data_scaled)
-    # Tahmini ekrana yazdıralım
     st.subheader("Tahmin Sonucu")
     if prediction[0] == 1:
         diabetes_dig = "Tahminlerimize göre Diyabet hastalığı riski taşıyor."
