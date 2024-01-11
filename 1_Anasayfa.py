@@ -5,13 +5,7 @@ st.set_page_config(
     page_title="DisPred",
     page_icon="🩺",
 )
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 left_co, cent_co,last_co = st.columns(3)
 with cent_co:
     st.image(Image.open("logo.png"), width=150)
