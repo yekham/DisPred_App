@@ -13,7 +13,7 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-st.image(Image.open("logo.png"),use_column_width=True)
+st.image(Image.open("logo.png"))
 st.image(Image.open("dispred.jpg"),use_column_width=True)
 st.write(
     "Merhaba! Yapay Zeka ile Hastalık Tahmini Uygulamamıza hoş geldiniz. Bu uygulama, belirli semptomlara dayanarak "
