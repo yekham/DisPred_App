@@ -1,5 +1,11 @@
 import streamlit as st
 from PIL import Image
+
+
+st.set_page_config(
+    page_title="DisPred",
+    page_icon="🩺",
+)
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -7,12 +13,6 @@ hide_streamlit_style = """
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
-st.set_page_config(
-    page_title="DisPred",
-    page_icon="🩺",
-)
-
 left_co, cent_co,last_co = st.columns(3)
 with cent_co:
     st.image(Image.open("logo.png"), width=150)
